@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QR Code Reader Demo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <span><%= link_to 'Home', root_path %></span>
+      <span><%= link_to 'QR Code Scanner', qr_codes_path %></span>
+    </header>
+
+    <section id="main">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </section>
+  </body>
+</html>

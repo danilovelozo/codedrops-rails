@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-2xl font-semibold my-2">
+  All Posts
+</h1>
+
+<% @posts.each do |post| %>
+  <h2 class="text-x1 font-semibold"><%= post.title %></h2>
+  <p class="m-1 pb-4"><%= post.content %></p>
+<% end %>
+
+<div class="mx-auto text-center my-4">
+  <%= will_paginate @posts %>
+</div>

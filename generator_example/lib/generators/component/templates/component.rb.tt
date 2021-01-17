@@ -1,0 +1,5 @@
+class <%= class_name %>Component
+  def initialize
+    @component_identifier = "<%= my_method %>"
+  end
+end

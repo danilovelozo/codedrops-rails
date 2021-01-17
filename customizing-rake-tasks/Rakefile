@@ -1,0 +1,22 @@
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require_relative 'config/application'
+require 'rubocop/rake_task'
+
+Rails.application.load_tasks
+Rake::Task['default'].clear
+Rake::Task['test'].clear
+
+task :default do
+  Rake::Task['brakeman:check'].invoke
+  Rake::Task['parallel:test'].invoke
+
+  Rake::Task['rails_best_practices:run'].invoke
+  Rake::Task['rubocop:run'].invoke
+  Rake::Task['reek:run'].invoke
+end
+
+task :test do
+  Rake::Task['parallel:test'].invoke
+end

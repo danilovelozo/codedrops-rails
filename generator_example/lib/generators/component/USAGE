@@ -1,0 +1,9 @@
+Description:
+    Create a component class
+
+Example:
+    rails generate component MyComponent
+
+    Creates the component class and unit test:
+        app/components/my_component.rb
+        test/components/my_component_test.rb

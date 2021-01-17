@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TailwindPagination</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'stylesheets' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body class="flex flex-col h-full bg-gray-200">
+    <main class="container mx-auto m-8 flex-1">
+      <%= yield %>
+    </main>
+  </body>
+</html>
