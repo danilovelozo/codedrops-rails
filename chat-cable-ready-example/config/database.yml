@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: danilo
+  password: root
+  port: 5433
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: chat_cable_ready_example_development
+
+  test:
+  <<: *default
+  database: chat_cable_ready_example_test
+
+production:
+  <<: *default
+  database: chat_cable_ready_example_production
+  username: chat_cable_ready_example
+  password: <%= ENV['CHAT_CABLE_READY_EXAMPLE_DATABASE_PASSWORD'] %>
