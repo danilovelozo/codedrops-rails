@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<video controls>
+  <source src="<%= url_for(@user.profile_video) %>"
+</video>
+
+<div data-id="<%= @user.id %>" data-controller="conversion-progress" style="max-width: 500px; max-height: 500px;">
+  <% if @user.convert_video? %>
+    <div>
+      <p>We are converting your video. The video is currently <span data-conversion-progress-target="progressText">0%</span> processed</p>
+    </div>
+  <% else %>
+    <video controls style="max-width: 100%; max-height: 100%;">
+      <source src="<%= url_for(@user.profile_video) %>">
+    </video>
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
