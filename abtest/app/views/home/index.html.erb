@@ -1,0 +1,6 @@
+<div style='text-align: center'>
+  <button>
+    <% link_text = @ab_test == 'control' ? 'Click me' : 'See something awesome' %>
+    <%= link_to(link_text, :perform_action)
+  </button>
+</div>
